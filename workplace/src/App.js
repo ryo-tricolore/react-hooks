@@ -9,6 +9,8 @@ const App = () => {
   const newIncrement = () => setCount(previousCount => previousCount + 1)
   const newDecrement = () => setCount(previousCount => previousCount - 1)
 
+  const reset = () => setCount(0)
+
   return (
     <>
       <div>count: {count}</div>
@@ -19,6 +21,9 @@ const App = () => {
       <div>
         <button onClick={newIncrement}>+1</button>
         <button onClick={newDecrement}>-1</button>
+      </div>
+      <div>
+        <button onClick={reset}>Reset</button>
       </div>
     </>
   )
