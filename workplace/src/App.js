@@ -6,12 +6,19 @@ const App = () => {
   const increment = () => setCount(count + 1)
   const decrement = () => setCount(count - 1)
 
+  const newIncrement = () => setCount(previousCount => previousCount + 1)
+  const newDecrement = () => setCount(previousCount => previousCount - 1)
+
   return (
     <>
       <div>count: {count}</div>
       <div>
         <button onClick={increment}>+1</button>
         <button onClick={decrement}>-1</button>
+      </div>
+      <div>
+        <button onClick={newIncrement}>+1</button>
+        <button onClick={newDecrement}>-1</button>
       </div>
     </>
   )
