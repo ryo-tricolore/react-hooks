@@ -11,6 +11,8 @@ const App = () => {
 
   const reset = () => setCount(0)
 
+  const multiplication = () => setCount(count * 2)
+
   return (
     <>
       <div>count: {count}</div>
@@ -25,6 +27,10 @@ const App = () => {
       <div>
         <button onClick={reset}>Reset</button>
       </div>
+      <div>
+        <button onClick={multiplication}>✖︎2</button>
+      </div>
+
     </>
   )
 }
