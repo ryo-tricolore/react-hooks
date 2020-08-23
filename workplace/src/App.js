@@ -13,6 +13,12 @@ const App = () => {
 
   const multiplication = () => setCount(count * 2)
 
+  const dividedByThree = () => {
+    if (count % 3 === 0) {
+      setCount(count / 3)
+    }
+  }
+
   return (
     <>
       <div>count: {count}</div>
@@ -30,7 +36,9 @@ const App = () => {
       <div>
         <button onClick={multiplication}>✖︎2</button>
       </div>
-
+      <div>
+        <button onClick={dividedByThree}>3の倍数の時だけ3で割る</button>
+      </div>
     </>
   )
 }
