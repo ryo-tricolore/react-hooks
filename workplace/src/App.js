@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
 
-function App() {
+const App = () => {
+  const [count, setCount] = useState(0)
+
+  const increment = () => setCount(count + 1)
+  const decrement = () => setCount(count - 1)
+
+  const newIncrement = () => setCount(previousCount => previousCount + 1)
+  const newDecrement = () => setCount(previousCount => previousCount - 1)
+
+  const reset = () => setCount(0)
+
+  const multiplication = () => setCount(count * 2)
+
+  const dividedByThree = () => {
+    if (count % 3 === 0) {
+      setCount(count / 3)
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div>count: {count}</div>
+      <div>
+        <button onClick={increment}>+1</button>
+        <button onClick={decrement}>-1</button>
+      </div>
+      <div>
+        <button onClick={newIncrement}>+1</button>
+        <button onClick={newDecrement}>-1</button>
+      </div>
+      <div>
+        <button onClick={reset}>Reset</button>
+      </div>
+      <div>
+        <button onClick={multiplication}>✖︎2</button>
+      </div>
+      <div>
+        <button onClick={dividedByThree}>3の倍数の時だけ3で割る</button>
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
