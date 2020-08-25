@@ -1,9 +1,22 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 const App = props => {
   const [state, setState] = useState(props) 
 
   const reset = () => setState(props)
+
+  useEffect(() => {
+    console.log('useEffect')
+  })
+
+  useEffect(() => {
+    console.log('useEffect callback once')
+  },[])
+
+  // nameの状態が変化した時だけ呼ばれる
+  useEffect(() => {
+    console.log('This callback is for name only')
+  }, [state.name])
 
   return (
     <>
