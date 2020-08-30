@@ -8,8 +8,8 @@ const App = () => {
   const [title, setTitle] = useState("")
   const [body, setBody] = useState("")
 
-  const addEvent = e => {  
-    e.preventDefault();    
+  const addEvent = e => {
+    e.preventDefault();
     dispatch({
       type: 'CREATE_EVENT',
       title,
@@ -18,9 +18,7 @@ const App = () => {
 
     setTitle('')
     setBody('')
-  }
-
-  console.log({state})
+  }  
   
   return (
     <>
@@ -52,7 +50,6 @@ const App = () => {
             <tbody>
               {state.map((event, index) => <Event key={index} event={event} dispatch={dispatch} />)}
             </tbody>
-
           </table>
       </div>
     </>
